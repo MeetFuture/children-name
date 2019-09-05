@@ -1,0 +1,40 @@
+<div class="content" nz-row>
+    <div nz-col nzOffset="4" nzSpan="16">
+        <nz-spin [nzSpinning]="loading">
+            <nz-card [nzExtra]="extraTemplate2" nzTitle="姓名评分">
+                <nz-list
+                    [nzDataSource]="datas"
+                    [nzRenderItem]="item"
+                    nzSize="large"
+                >
+                    <ng-template #item let-i="index" let-item>
+                        <div class="list-item" nz-row nzJustify="space-between" nzType="flex">
+                            <label class="index">{{i + 1}}</label>
+                            <div class="name" nz-col>
+                                {{item.name}}
+                            </div>
+                            <div class="score" nz-col>
+                                <nz-rate (ngModelChange)="saveChange(i)" [(ngModel)]="item.score" [nzAllowClear]="false" [nzAllowHalf]="true" [nzCount]="10"></nz-rate>
+                            </div>
+                            <div [nzLg]="14" class="desc" nz-col>
+                                <textarea (ngModelChange)="saveChange(i)" [(ngModel)]="item.desc" nz-input placeholder="点评" style="height: 100%"></textarea>
+                            </div>
+                            <i (click)="removeName(i)" class="remove" nz-icon nzTheme="outline" nzType="close"></i>
+                        </div>
+                    </ng-template>
+                </nz-list>
+            </nz-card>
+        </nz-spin>
+    </div>
+</div>
+
+<ng-template #extraTemplate2>
+    <div nz-row nzGutter="16" nzJustify="end" nzType="flex">
+        <div nz-col style="width: 100px;">
+            <i (click)="download()" nz-icon nzTheme="outline" nzType="download"></i>
+        </div>
+        <div nz-col style="width: 100px ;">
+            <button [routerLink]="['/index']" nz-button nzType="primary" style="width: 100%;">返回挑选</button>
+        </div>
+    </div>
+</ng-template>

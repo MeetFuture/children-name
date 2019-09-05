@@ -1,0 +1,27 @@
+
+.content {
+    padding: 32px 64px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.name {
+    margin: 2px 2px;
+    padding: 8px 8px;
+    width: 100px;
+    text-align: center;
+    border-radius: 4px;
+    font-family: Tahoma, Helvetica, Arial, '宋体', sans-serif;
+}
+
+.name.selected {
+    background-color: #5fba7d;
+}
+
+.nameContent {
+    margin-top: 40px;
+}
+
+.handContent {
+    margin-top: 40px;
+}

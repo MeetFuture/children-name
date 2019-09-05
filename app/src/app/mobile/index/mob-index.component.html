@@ -1,0 +1,27 @@
+<Card>
+    <CardHeader [title]="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名字选择'" [thumb]="thumb"></CardHeader>
+    <CardBody>
+        <nz-spin [nzSpinning]="loading">
+            <div class="am-list" style="margin:0;">
+                <div class="am-list-body">
+                    <InputItem [clear]="true" [placeholder]="'姓氏'" [content]="'姓氏:'" [(ngModel)]="config.xing"></InputItem>
+                    <ListItem Picker [extra]="mingSelected" [arrow]="'horizontal'" [data]="mingList" [(ngModel)]="mingValue" (ngModelChange)="onChangeConfig('ming',$event)">名长:</ListItem>
+                    <ListItem Picker [extra]="sexSelected" [arrow]="'horizontal'" [data]="sexList" [(ngModel)]="sexValue" (ngModelChange)="onChangeConfig('sex',$event)">性别:</ListItem>
+                    <InputItem [type]="'digit'" [clear]="true" [placeholder]="'数量'" [content]="'数量:'" [(ngModel)]="config.num"></InputItem>
+                </div>
+            </div>
+            <WhiteSpace size="lg"></WhiteSpace>
+            <Grid [data]="names" [square]="false" class="not-square-grid"  (click)="choose($event)"></Grid>
+            <WhiteSpace size="lg"></WhiteSpace>
+            <div style="width:100%;color:#108ee9;text-align:center">
+                <label (click)="handInputPrompt()">手动输入</label>
+                <label style="width: 80px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <label (click)="random()">换一批</label>
+            </div>
+        </nz-spin>
+    </CardBody>
+</Card>
+
+<ng-template #thumb>
+    <i nz-icon nzTheme="fill" nzType="plus-circle" style="color:rgb(16, 144, 255)"></i>
+</ng-template>

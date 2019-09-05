@@ -1,0 +1,40 @@
+
+.content {
+    padding: 32px 64px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.list-item {
+    min-height: 60px;
+    margin: 8px 0px;
+}
+
+.index {
+    margin-top: 8px;
+}
+
+.name {
+    width: 100px;
+    padding-left: 4px;
+    margin-top: 4px;
+    vertical-align: center;
+    font-size: 24px;
+    font-family: Tahoma, Helvetica, Arial, '宋体', sans-serif;
+}
+
+
+.score {
+    margin-top: 4px;
+    text-align: center;
+    width: 300px;
+}
+
+.desc {
+    font-family: Tahoma, Helvetica, Arial, '宋体', sans-serif;
+}
+
+.remove {
+    font-size: 12px;
+    margin-top: 24px;
+}

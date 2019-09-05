@@ -1,0 +1,66 @@
+<div class="content" nz-row>
+    <div nz-col nzOffset="4" nzSpan="16">
+        <nz-spin [nzSpinning]="loading">
+            <nz-card [nzExtra]="extraTemplate" nzTitle="姓名选择">
+                <div nz-row nzJustify="center" nzType="flex">
+                    <label (click)="choose($event)" *ngFor="let name of names" class="name">{{name}}</label>
+                </div>
+
+                <div class="handContent" nz-row nzGutter="16" nzJustify="end" nzType="flex">
+                    <div nz-col nzSpan="5">
+                        <nz-input-group>
+                            <input [(ngModel)]="handInput" nz-input type="text" placeholder="输入名字"/>
+                        </nz-input-group>
+                    </div>
+                    <div nz-col style="width: 100px;">
+                        <button (click)="handInputSubmit()" nz-button nzType="primary" style="width: 100%;">添加</button>
+                    </div>
+                </div>
+            </nz-card>
+        </nz-spin>
+    </div>
+</div>
+
+<ng-template #extraTemplate>
+    <div nz-row nzGutter="16" nzJustify="end" nzType="flex">
+        <div nz-col style="width: 140px;">
+            <nz-input-group nzAddOnBefore="姓氏:">
+                <input [(ngModel)]="config.xing" nz-input type="text"/>
+            </nz-input-group>
+        </div>
+
+        <div nz-col style="width: 140px;">
+            <nz-input-group nzAddOnBefore="名长:">
+                <nz-select [(ngModel)]="config.ming" nzAllowClear nzPlaceHolder="不限" style="width: 100%;">
+                    <nz-option nzLabel="不限" nzValue="all"></nz-option>
+                    <nz-option nzLabel="1" nzValue="1"></nz-option>
+                    <nz-option nzLabel="2" nzValue="2"></nz-option>
+                </nz-select>
+            </nz-input-group>
+        </div>
+
+        <div nz-col style="width: 140px;">
+            <nz-input-group nzAddOnBefore="性别:">
+                <nz-select [(ngModel)]="config.sex" nzAllowClear nzPlaceHolder="不限" style="width: 100%;">
+                    <nz-option nzLabel="不限" nzValue="all"></nz-option>
+                    <nz-option nzLabel="男性" nzValue="nan"></nz-option>
+                    <nz-option nzLabel="女性" nzValue="nv"></nz-option>
+                </nz-select>
+            </nz-input-group>
+        </div>
+
+        <div nz-col style="width: 140px;">
+            <nz-input-group nzAddOnBefore="数量:">
+                <nz-input-number [(ngModel)]="config.num" [nzMax]="1000" [nzMin]="1" [nzStep]="10" style="width: 100%;"></nz-input-number>
+            </nz-input-group>
+        </div>
+
+        <div nz-col style="width: 100px;">
+            <button (click)="random()" nz-button nzType="primary" style="width: 100%;">换一批</button>
+        </div>
+        <div nz-col style="width: 100px;">
+            <button [routerLink]="['/rating']" nz-button nzType="primary" style="width: 100%;">已选</button>
+        </div>
+    </div>
+</ng-template>
+

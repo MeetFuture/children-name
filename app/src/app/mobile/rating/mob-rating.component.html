@@ -1,0 +1,29 @@
+<Card>
+    <CardHeader [title]="'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名评分'" [thumb]="thumb"></CardHeader>
+    <CardBody>
+        <nz-spin [nzSpinning]="loading">
+            <div class="am-list">
+                <div class="am-list-body">
+                    <div nz-row *ngFor="let item of datas; let i = index;">
+                        <div class="am-list-item">
+                            <label class="index">{{i + 1}}</label>
+                            <label class="name">{{item.name}}</label>
+                            <nz-rate (ngModelChange)="saveChange(i)" class="score" [(ngModel)]="item.score" [nzAllowClear]="false" [nzAllowHalf]="true" [nzCount]="10"></nz-rate>
+
+                            <i nz-icon nzType="{{item.showDesc?'caret-up':'caret-down'}}" class="desc-ico" nzTheme="outline" (click)="item.showDesc = !item.showDesc"></i>
+                        </div>
+                        <div class="am-list-item" *ngIf="item.showDesc">
+                            <i nz-icon nzType="minus-circle" class="close-ico" nzTheme="outline" (click)="removeName(i,item.name)"></i>
+                            <TextareaItem [autoHeight]="true" [(ngModel)]="item.desc" class="desc" placeholder="点评" (ngModelChange)="saveChange(i)"></TextareaItem>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nz-spin>
+    </CardBody>
+</Card>
+
+
+<ng-template #thumb>
+    <i nz-icon nzTheme="fill" nzType="bulb" style="color:rgb(16, 144, 255)"></i>
+</ng-template>

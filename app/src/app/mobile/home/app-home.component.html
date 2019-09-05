@@ -1,0 +1,33 @@
+<TabBar
+    (onPress)="tabBarTabOnPress($event)"
+    [activeTab]="selectedIndex"
+    [barTintColor]="'white'"
+    [tabBarPosition]="'bottom'"
+    [tintColor]="'#1090ff'"
+    [unselectedTintColor]="'#888'"
+>
+    <TabBarItem [icon]="icon1" [key]="1" [selectedIcon]="icon11" [title]="'选择'">
+        <ng-container>
+            <my-mob-index #index></my-mob-index>
+        </ng-container>
+    </TabBarItem>
+    <TabBarItem [icon]="icon2" [key]="2" [selectedIcon]="icon22" [title]="'评分'">
+        <ng-container>
+            <my-mob-rating #rating></my-mob-rating>
+        </ng-container>
+    </TabBarItem>
+</TabBar>
+
+
+<ng-template #icon1>
+    <i nz-icon nzTheme="outline" nzType="plus-circle"></i>
+</ng-template>
+<ng-template #icon11>
+    <i nz-icon nzTheme="fill" nzType="plus-circle"></i>
+</ng-template>
+<ng-template #icon2>
+    <i nz-icon nzTheme="outline" nzType="bulb"></i>
+</ng-template>
+<ng-template #icon22>
+    <i nz-icon nzTheme="fill" nzType="bulb"></i>
+</ng-template>

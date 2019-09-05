@@ -1,0 +1,17 @@
+
+
+/deep/ .am-grid-item-content.selected {
+}
+
+/deep/ .am-grid-text {
+    font-family: Tahoma, Helvetica, Arial, '宋体', sans-serif;
+    font-size: 18px !important;
+}
+
+/deep/ .am-grid-item-content.selected .am-grid-text {
+    color: #108ee9 !important;
+}
+
+.handContent {
+    margin-top: 40px;
+}

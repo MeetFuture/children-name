@@ -1,0 +1,51 @@
+
+.index {
+    position: absolute;
+    left: 0;
+}
+
+.name {
+    margin-left: 8px;
+    font-size: 18px;
+    min-width: 64px;
+    font-family: Tahoma, Helvetica, Arial, '宋体', sans-serif;
+}
+
+.score {
+    text-align: center;
+}
+
+.close-ico {
+    color: #ffc107;
+    position: absolute;
+    left: 0px;
+    top: 4px;
+}
+
+.desc-ico {
+    color: #1890ff;
+    right: 8px;
+    position: absolute;
+}
+
+.desc {
+    border: 1px solid #ddd !important;
+    margin: 0px 16px 0px 8px;
+    width: 100%;
+}
+
+/deep/ .anticon-star {
+    margin-top: -6px;
+    font-size: 18px;
+}
+
+/deep/ .ant-rate-star {
+    margin: 0 2px 0 0;
+}
+
+/deep/ .am-textarea-control textarea {
+    font-size: 14px;
+    line-height: 15px;
+    font-family: Tahoma, Helvetica, Arial, '宋体', sans-serif;
+}
+

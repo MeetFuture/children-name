@@ -1,0 +1,25 @@
+
+.content {
+    padding: 32px 64px;
+}
+
+.name {
+    margin: 4px 8px;
+    width: 90px;
+    text-align: center;
+    border-radius: 4px;
+    font-family: Tahoma, Helvetica, Arial, '宋体', sans-serif;
+}
+
+.name.selected {
+    background-color: #28a745;
+}
+
+.handContent {
+    margin-top: 40px;
+}
+
+
+/deep/ .am-badge {
+    text-align: right;
+}
